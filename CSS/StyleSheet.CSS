@@ -1,0 +1,288 @@
+/* Styling av dokumentets kropp - typsnitt, textstorlek, radavstånd och 0 marginaler. */
+body {
+    font-family: "Open Sans", Verdana, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 2em;
+    margin: 0;
+}
+
+/* Styling av grid-container med 4 kolumner, alla med samma storlek på 25%. */
+.grid-container {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    justify-content: center;
+    gap: 10px;
+    padding: 5px 20px;
+    max-width: 1600px;
+}
+
+/* Item 1 i grid-container, ligger i kolumn 1, rad 1. */
+.item1 {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+/* Item 2 i grid-container, ligger i kolumn 1-2, rad 1. Marginaler och padding för att ahamna nedanför item 0. */
+.item2 {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+    padding: 80px;
+    margin: 50px 0px;
+}
+
+/* Item 3 i grid-container, ligger i kolumn 3-4, rad 1. Blå bakgrundsfärg, vit text, större textstorlek + radhöjd,
+padding & margin, border-radius för rundare kant i nedre vänstra hörnet. */
+.item3 {
+    grid-column: 3 / span 2;
+    grid-row: 1;
+    background-color: #2F80ED;
+    color: white;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 3rem;
+    padding: 80px 50px 80px 160px;
+    border-radius: 0 0 0 150px;
+    margin-bottom: 50px;
+}
+
+/* Display grid på div-taggar där bilderna ligger. */
+div {
+    display: grid;
+}
+
+/* Item 4 i grid-container, kolumn 1 rad 2. */
+.item4 {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+/* Item 5 i grid-container, kolumn 2 rad 2. */
+.item5 {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+/* Item 6 i grid-container, kolumn 3 rad 2. */
+.item6 {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+/* Item 7 i grid-container, kolumn 4 rad 2. */
+.item7 {
+    grid-column: 4;
+    grid-row: 2;
+}
+
+/* Item 8 i grid-container, kolumn 1-3 rad 3. Ljusblå bakgrundsfärg, svart text, större radhöjd,
+padding & margin, border-radius för rundare kant i övre + nedre högra hörnen. */
+.item8 {
+    grid-column: 1 / span 3;
+    grid-row: 3;
+    background-color: #E0ECFD;
+    color: black;
+    line-height: 2.5rem;
+    border-radius: 0 55px 55px 0;
+    padding: 30px 80px;
+    margin: 80px 0;
+}
+
+/* Item 9 i grid-container, kolumn 1-4 rad 4. */
+.item9 {
+    grid-column: 1 / span 4;
+    grid-row: 4;
+}
+
+/* Storlek för logotyp */
+.size1 {
+    width: 80px;
+    height: auto;
+}
+
+/* Storlek för bilder, auto-margin för att centrera, border-radius för rundare kanter på alla hörn, opacitet. */
+.size2 {
+    width: 80%;
+    height: auto;
+    margin: auto;
+    border-radius: 55px;
+    opacity: 80%;
+}
+
+/* Storlek för heading 1 */
+h1 {
+    font-size: 52px;
+}
+
+/* Storlek och färg för heading 2 */
+h2 {
+    font-size: 36px;
+    color: #2F80ED;
+    font-weight: 600;
+}
+
+/* Storlek för heading 3 */
+h3 {
+    font-size: 24px;
+    font-weight: 400;
+}
+
+/* Tar bort padding + listprickar i listor */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+/* ID-selektor för opacitet som används på text */
+#opacity {
+    opacity: 60%;
+}
+
+/* Footer med blå bakgrund, vit text, mindre radavstånd, auto-höjd och padding. */
+footer {
+    background-color: #2F80ED;
+    color: white;
+    padding: 10px 50px;
+    line-height: 1rem;
+    height: auto;
+}
+
+/* Styling för sidan vid max-bredd 1024px. */
+@media screen and (max-width: 1024px) {
+
+    /* Mindre padding, mer marginal till topp */
+    .item2 {
+        padding: 0 30px 0 30px;
+        margin: 150px 0px 0px 0px;
+    }
+
+    /* Mindre padding och marginal */
+    .item3 {
+        padding: 30px 50px 50px 80px;
+        margin-bottom: 30px;
+    }
+
+    /* Täcker kolumn 1-2, marginal under */
+    .item4 {
+        grid-column: 1 / span 2;
+        margin-bottom: 30px;
+    }
+
+    /* Täcker kolumn 3-4, marginal under */
+    .item5 {
+        grid-column: 3 / span 2;
+        margin-bottom: 30px;
+    }
+
+    /* Täcker kolumn 1-2, flyttad till rad 3 */
+    .item6 {
+        grid-column: 1 / span 2;
+        grid-row: 3;
+    }
+
+    /* Täcker kolumn 3-4, flyttad till rad 3 */
+    .item7 {
+        grid-column: 3 / span 2;
+        grid-row: 3;
+    }
+
+    /* Flyttad till rad 4, mindre marginal */
+    .item8 {
+        grid-row: 4;
+        margin: 50px 0;
+    }
+
+    /* Flyttad till rad 5 */
+    .item9 {
+        grid-row: 5;
+    }
+
+    /* Mindre storlek för h1, tar bort marginal ovanför. */
+    h1 {
+        font-size: 42px;
+        margin-top: 0;
+    }
+
+    /* Mindre storlek för h2 */
+    h2 {
+        font-size: 36px;
+    }
+
+    /* Mindre storlek för h3 */
+    h3 {
+        font-size: 24px;
+    }
+
+}
+
+/* Styling för sidan vid max-bredd 600px. */
+@media screen and (max-width: 600px) {
+
+    /* Täcker alla kolumner */
+    .item2 {
+        grid-column: 1 / span 4;
+    }
+
+    /* Visas inte */
+    .item3 {
+        display: none;
+    }
+
+    /* Täcker alla kolumner, flyttad till rad 3. Mindre marginal under. */
+    .item4 {
+        grid-column: 1 / span 4;
+        grid-row: 3;
+        margin-bottom: 10px;
+    }
+    /* Täcker alla kolumner, flyttad till rad 4. Mindre marginal under. */
+    .item5 {
+        grid-column: 1 / span 4;
+        grid-row: 4;
+        margin-bottom: 10px;
+    }
+
+    /* Täcker alla kolumner, flyttad till rad 5. Mindre marginal under. */
+    .item6 {
+        grid-column: 1 / span 4;
+        grid-row: 5;
+        margin-bottom: 10px;
+    }
+
+    /* Täcker alla kolumner, flyttad till rad 6. Mindre marginal under. */
+    .item7 {
+        grid-column: 1 / span 4;
+        grid-row: 6;
+        margin-bottom: 10px;
+    }
+    /* Flyttad upp till rad 2. Mindre marginal och padding. */
+    .item8 {
+        grid-row: 2;
+        padding: 30px 30px;
+        margin: 30px 0;
+    }
+
+    /* Flyttad till rad 7 */
+    .item9 {
+        grid-row: 7;
+    }
+
+    /* Tar bort border radius, ändrar storlek till 100 % */
+    .size2 {
+        border-radius: 0;
+        width: 100%;
+    }
+
+    /* Mindre storlek för h1 */
+    h1 {
+        font-size: 36px;
+    }
+
+    /* Mindre storlek för h2 */
+    h2 {
+        font-size: 26px;
+    }
+
+    /* Mindre storlek för h3 */
+    h3 {
+        font-size: 24px;
+    }
+
+}
